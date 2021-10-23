@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/drawable-anydpi/ic_add_for_fab.xml" value="0.346875" />
+        <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/activity_main.xml" value="0.35507246376811596" />
         <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/content_main.xml" value="0.5541666666666667" />
         <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/fragment_first.xml" value="0.3307291666666667" />
+        <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/fragment_second.xml" value="0.5541666666666667" />
         <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/wordlis_item.xml" value="0.3307291666666667" />
         <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/layout/wordlist_item.xml" value="0.3307291666666667" />
+        <entry key="..\:/RecyclerViews/TreyRegruthRecyclerViews/app/src/main/res/menu/menu_main.xml" value="0.5456410256410257" />
       </map>
     </option>
   </component>

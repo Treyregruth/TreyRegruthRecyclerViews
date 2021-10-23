@@ -21,12 +21,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private final LinkedList<String> mWordList = new LinkedList<>();
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             mWordList.addLast("Word " + i);
         }
 
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerview);
+        mRecyclerView = findViewById(R.id.recyclerview);
         WordListAdapter mAdapter = new WordListAdapter(this, mWordList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int wordListSize = mWordList.size();
                 mWordList.addLast("+ Word " + wordListSize);
-                mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
+                Objects.requireNonNull(mRecyclerView.getAdapter()).notifyItemInserted(wordListSize);
                 mRecyclerView.smoothScrollToPosition(wordListSize);
             }
         });
@@ -76,7 +78,13 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            mWordList.clear();
+            for(int i = 0; i < 20; i++) {
+                mWordList.addLast("Word " + i);
+            }
+            WordListAdapter mAdapter = new WordListAdapter(this, mWordList);
+            mRecyclerView.setAdapter(mAdapter);
             return true;
         }
 
